@@ -1,3 +1,8 @@
+variable "instance_name" {
+  default = "f5-ve-01"
+  description = ""
+}
+
 variable "management_subnet_id" {
   default = ""
   description = "VPC Gen2 subnet ID for the TMOS management network.  To list available subnets, run `ibmcloud is subnets`."
@@ -13,7 +18,7 @@ variable "external_subnet_id" {
   description = "VPC Gen2 subnet ID for the TMOS external (VIP) network.  To list available subnets, run `ibmcloud is subnets`."
 }
 
-variable "tmos_image_id" {
+variable "tmos_image_name" {
   default = ""
   description = "The image to be used when provisioning F5 BIG-IP instance. To list available images, run `ibmcloud is images`."
 }
@@ -27,6 +32,18 @@ variable "ssh_key_name" {
     default = ""
     description = "The name of the public SSH key (VPC Gen 2 SSH Key) to be used when provisining F5 BIG-IP instance.  To list available keys, run `ibmcloud is keys`."
 }
+
+variable "tmos_license_basekey" {
+    default = ""
+    description = "Base registration key for the F5 BIG-IP instance."
+}
+
+variable "tmos_admin_password" {
+    default = "f5c0nfig"
+    description = "'admin' account password for the F5 BIG-IP instance."
+}
+
+
 
 
 
