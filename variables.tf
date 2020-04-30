@@ -39,7 +39,7 @@ variable "tmos_license_basekey" {
 }
 
 variable "tmos_admin_password" {
-    default = "f5c0nfig"
+    default = ""
     description = "'admin' account password for the F5 BIG-IP instance."
 }
 
