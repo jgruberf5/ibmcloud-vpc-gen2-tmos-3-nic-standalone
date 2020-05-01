@@ -83,10 +83,10 @@ After you apply the template your VPC resources are successfully provisioned in 
 If there is a failure during F5 BIG-IP instance creation, the created resources must be destroyed before attempting to instantiate again. To destroy resources go to `Schematics -> Workspaces -> [Your Workspace] -> Actions -> Delete` to delete  all associated resources. <br/>
 1. Do not modify or delete floating/public IPs used by the F5 BIG-IP instance.
 
-# Post F5-BIGIP Instance Spin-up
+# Post F5 BIG-IP Instance Spin-up
 
 1. From the VPC list, confirm the F5 BIG-IP virtual instance is powered ON with a green button
-# 2. Assign a Floating IP to the BIG-IP External subnet. Refer to the steps below to associate floating IP
+<!---2. Assign a Floating IP to the BIG-IP External subnet. Refer to the steps below to associate floating IP
 #    - Go to `VPC Infrastructure Gen 2` from IBM Cloud
 #    - Click `Floating IPs` from the left pane
 #    - Click `Reserve floating IP`, enter `external-floating-ip` for its name -> Click `Reserve IP`
@@ -103,8 +103,9 @@ If there is a failure during F5 BIG-IP instance creation, the created resources 
 #    - Select `Port Range` under Port
 #    - Give `8443` port number in `Port min` and `Port max`
 #    - Select `Source type` as `Any`
-#    - Click `Save`, and a new rule will be added to your security group
-2. From the browser, open `https://<Floating IP>:8443`, login using user and password 
-5. In First login, it will ask to reset the password.
-6. Once the password got reset. You will be able to login to F5 instance admin portal.
+#    - Click `Save`, and a new rule will be added to your security group --->
+2. If you created an admin password using the `tmos_admin_passsword` variable, open `https://<Floating IP>` and login using `admin` and the password you chose.
+3. If you did not create an admin password, open an ssh terminal to your BIG-IP instance using the `<Floating IP>` created during bootup and they ssh key you assigned in the catalog.
+4. On the command line, enter `tmsh modify auth user admin password <new_password>`.  You may now go to step 2 to utilize the BIG-IP GUI.
+
 
