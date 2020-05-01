@@ -23,7 +23,7 @@ Learn more; https://www.ibm.com/cloud/support
 ## Prerequisites
 
 - Must have access to [Gen 2 VPC](https://cloud.ibm.com/vpc-ext/network/vpcs).
-- The given VPC must have at least 3 subnets to deploy the BIG-IP.  The first subnet is reserved for management, the second for interal-facing traffic and the third for external facing traffic.  BIG-IP self-IPs will automatically be assigned to each subnet during initial boot.
+- The given VPC must have at least 3 subnets to deploy the BIG-IP.  The first subnet is reserved for management, the second for internal-facing traffic and the third for external-facing traffic.  BIG-IP self-IPs will automatically be assigned to each subnet during initial boot.
 - The BIG-IP custom image you wish to deploy is present in your list of images. run 'ibmcloud is images' to ensure the image you wish to deploy is available. 
 
 ## Costs
@@ -105,7 +105,7 @@ If there is a failure during F5 BIG-IP instance creation, the created resources 
 #    - Select `Source type` as `Any`
 #    - Click `Save`, and a new rule will be added to your security group --->
 2. If you created an admin password using the `tmos_admin_passsword` variable, open `https://<Floating IP>` and login using `admin` and the password you chose.
-3. If you did not create an admin password, open an ssh terminal to your BIG-IP instance using the `<Floating IP>` created during bootup and they ssh key you assigned in the catalog.
-4. On the command line, enter `tmsh modify auth user admin password <new_password>`.  You may now go to step 2 to utilize the BIG-IP GUI.
+3. If you did not create an admin password, open an ssh terminal to your BIG-IP instance using the `<Floating IP>` created during bootup and the ssh key you assigned in the catalog.
+4. On the terminal command line, enter `tmsh modify auth user admin password <new_password>`.  You may now go to step 2 to utilize the BIG-IP GUI.
 
 
