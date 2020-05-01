@@ -3,7 +3,7 @@ chpasswd:
     expire: false
     list: |
       admin:${tmos_admin_password}
-  tmos_dhcpv4_tmm:
+tmos_dhcpv4_tmm:
     enabled: true
     rd_enabled: false
     configsync_interface: 1.1
@@ -25,6 +25,3 @@ chpasswd:
           class: License
           licenseType: regKey
           regKey: "${tmos_license_basekey}"
-  
-  
-  
