@@ -68,6 +68,15 @@ Fill in the following values, based on the steps that you completed before you b
 | `internal_subnet_id` | null | The ID of the subnet where the BIG-IP internal interface will be deployed. Click on the subnet details in the VPC Subnet Listing to determine this value | 
 | `external_subnet_id` | null | The ID of the subnet where the BIG-IP external interface will be deployed. Click on the subnet details in the VPC Subnet Listing to determine this value | 
 
+## Compute Profiles
+| Profile Name | Throughput Max (per IBM) | Recommendations |
+| ------------ | ------------------------ | --------------- |
+| `cx2-2x4` | 4 Gbps | Ideal for Good or LTM license up to 1 Gbps (note that startup times may be extended due to memory utilization) |
+| `cx2-4x8` | 8 Gbps | Ideal for Better, WAF and AWAF license up to 1 Gbps |
+| `cx2-8x16` | 16 Gbps | Ideal for Best license up to 10 Gbps or Good/Better/WAF/AWAF throughputs above 1 Gbps |
+| `cx2-16x32` | 64 GBps | Ideal for performance requiring 8 cores or more |
+
+
 ### Outputs
 After you apply the template your VPC resources are successfully provisioned in IBM Cloud, you can review information such as the virtual server IP addresses and VPC identifiers in the Schematics log files, in the `Terraform SHOW and APPLY` section.
 
