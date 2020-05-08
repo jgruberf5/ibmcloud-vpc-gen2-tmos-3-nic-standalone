@@ -223,3 +223,24 @@ resource "ibm_is_floating_ip" "f5_management_floating_ip" {
 #  target = ibm_is_instance.f5_ve_instance.network_interfaces.1.id
 #  depends_on = [ibm_is_instance.f5_ve_instance, ibm_is_floating_ip.f5_management_floating_ip]
 #}
+
+output "resource_name" {
+  value = ibm_is_instance.f5_ve_instance.name
+}
+
+output "resource_status" {
+  value = ibm_is_instance.f5_ve_instance.status
+}
+
+output = "VPC" {
+  value = ibm_is_instance.f5_ve_instance.vpc
+}
+
+output = "f5_admin_portal" {
+  value = "https://${ibm_is_floating_ip.f5_management_ip.address}"
+}
+
+output = "f5_as_url" {
+  value = "https://${ibm_is_floating_ip.f5_management_ip.address}/mgmt/shared/appsvcs/declare"
+}
+

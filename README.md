@@ -85,7 +85,8 @@ After you apply the template your VPC resources are successfully provisioned in 
 | `resource_name` | Name of the F5 BIG-IP instance | N/A |
 | `resource_status` | Status of the F5 BIG-IP instance | `Running` or `Failed` |
 | `VPC` | The VPC ID | `r134-7a9df886-xxxx-yyyy-zzzz-67c6dd202337` |
-| `f5_admin_portal` | Web url to interact with F5-BIGIP admin portal - `https://<Floating IP>:8443` | `https://192.168.1.1:8443` |
+| `f5_admin_portal` | Web url to interact with F5-BIGIP admin portal - `https://<Floating IP>` | `https://192.168.1.1` |
+| `f5_as3_url` | F5-BIGIP application services declarative interface - `https://<Floating IP>/mgmt/shared/appsvcs/declare` | `https://192.168.1.1/mgmt/shared/appsvcs/declare` |
 
 ## Notes
 
@@ -103,14 +104,14 @@ If there is a failure during F5 BIG-IP instance creation, the created resources 
 #    - Click Three Dot Button corresponding to the Unassociated IP address -> Click `Associate`
 #    - Select F5 instance from `Instance to be associated` column.
 #    - After clicking `Associate`, you can see the IP address assigned to your F5 Instance.
-# 3. In the Security group,  here are the steps to open the port 8443
+# 3. In the Security group,  here are the steps to open the port 443
 #    - Go to `VPC Infrastructure Gen 2` from IBM Cloud
 #    - Click `Security groups` from the left pane
 #   - Click the security group which is corresponding to your VPC
 #    - Click `New Rule` in "Inbound Rules" column.
 #   - Select `Protocol` as "TCP"
 #    - Select `Port Range` under Port
-#    - Give `8443` port number in `Port min` and `Port max`
+#    - Give `443` port number in `Port min` and `Port max`
 #    - Select `Source type` as `Any`
 #    - Click `Save`, and a new rule will be added to your security group --->
 2. If you created an admin password using the `tmos_admin_passsword` variable, open `https://<Floating IP>` and login using `admin` and the password you chose.
