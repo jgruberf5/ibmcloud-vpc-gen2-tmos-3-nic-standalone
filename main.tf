@@ -232,15 +232,20 @@ output "resource_status" {
   value = ibm_is_instance.f5_ve_instance.status
 }
 
-output = "VPC" {
+output "VPC" {
   value = ibm_is_instance.f5_ve_instance.vpc
 }
 
-output = "f5_admin_portal" {
+output "f5_shell_access" {
+  value = "ssh://root@${ibm_is_floating_ip.f5_management_ip.address}"
+}
+
+
+output "f5_admin_portal" {
   value = "https://${ibm_is_floating_ip.f5_management_ip.address}"
 }
 
-output = "f5_as_url" {
+output "f5_as_url" {
   value = "https://${ibm_is_floating_ip.f5_management_ip.address}/mgmt/shared/appsvcs/declare"
 }
 
